@@ -17,6 +17,10 @@ class Layout {
     $this->layout = $layout;
   }
 
+  function set_theme($theme) {
+    $this->theme = $theme;
+  }
+
   function get_theme() {
     return $this->theme;
   }

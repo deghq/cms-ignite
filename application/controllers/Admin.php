@@ -1,11 +1,11 @@
 <?php
-class Account extends CI_Controller {
+class Admin extends CI_Controller {
   function __construct() {
     parent::__construct();
     $this->load->model('user_model');
   }
 
-  function login() {
+  function index() {
     redirect_if($this->session->userdata('user_id'), 'dashboard');
     $data['message'] = '';
     if ($this->input->post()) {
