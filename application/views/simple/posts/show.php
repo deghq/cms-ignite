@@ -1,4 +1,5 @@
 <h3><?php echo $post->title; ?></h3>
+<p><?php echo anchor('posts/edit/' . $post->id, 'Edit'); ?></p>
 <?php echo $post->content; ?>
 
 <h3>Comments</h3>
