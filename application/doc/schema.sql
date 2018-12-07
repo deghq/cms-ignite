@@ -28,3 +28,8 @@ create table post_comments(
   comments mediumtext
 );
 alter table post_comments add date datetime;
+
+create table links(
+  id integer not null primary key auto_increment,
+  name varchar(255)
+);
