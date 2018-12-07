@@ -4,7 +4,8 @@ class Home extends CI_Controller {
     parent::__construct();
     $this->load->model('page_model');
     $this->load->model('link_model');
-    $this->layout->set_layout('home_layout');
+    
+    $this->layout->set_theme('themes/spectrum');
   }
 
   function index() {
