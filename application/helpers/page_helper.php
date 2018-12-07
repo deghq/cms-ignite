@@ -6,3 +6,9 @@ function page_form() {
     'content' => $obj->input->post('content'),
   );
 }
+
+function redirect_if($condition, $url) {
+  if ($condition) {
+    redirect($url);
+  }
+}
