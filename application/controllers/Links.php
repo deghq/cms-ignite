@@ -23,7 +23,8 @@ class Links extends CI_Controller {
       $this->link_model->save($link);
       redirect('links');
     }
-    $this->layout->view('links/add');
+    $data['pages'] = $this->page_model->find_all_for_dropdown();
+    $this->layout->view('links/add', $data);
   }
 
   function edit($id) {
