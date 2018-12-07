@@ -34,3 +34,6 @@ create table links(
   name varchar(255)
 );
 alter table links add page_id integer;
+alter table links add reference varchar(255);
+alter table links add page_reference tinyint;
+alter table links change page_reference is_page_reference tinyint;

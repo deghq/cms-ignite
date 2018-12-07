@@ -12,3 +12,8 @@ function redirect_if($condition, $url) {
     redirect($url);
   }
 }
+
+function load_view($view, $data = null) {
+  $obj = &get_instance();
+  $obj->load->view($obj->layout->get_theme() . '/' . $view, $data);
+}
