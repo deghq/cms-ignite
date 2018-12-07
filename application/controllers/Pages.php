@@ -11,11 +11,6 @@ class Pages extends CI_Controller {
     $this->layout->view('pages/index', $data);
   }
 
-  function show($id) {
-    $data['page'] = $this->page_model->read($id);
-    $this->layout->view('pages/show', $data);
-  }
-
   function add() {
     if ($this->input->post()) {
       $page = page_form();
