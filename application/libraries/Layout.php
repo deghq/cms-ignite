@@ -2,7 +2,7 @@
 
 class Layout {
 
-  function __construct($layout = 'admin_layout', $theme = 'spectrum') {
+  function __construct($layout = 'layout', $theme = '') {
     $this->layout = $layout;
     $this->theme = $theme;
     $this->obj = &get_instance();

@@ -13,12 +13,12 @@ class Account extends CI_Controller {
       $user = $this->user_model->read_by_username_and_password($username, $password);
       if ($user) {
         $this->session->set_userdata('user_id', $user->id);
-        redirect('account/dashboard');
+        redirect('dashboard');
       } else {
         $data['message'] = 'Invalid user name or password. Please try again!';
       }
     }
-    $this->load->view($this->layout->get_theme() . '/account/login', $data);
+    $this->load->view('account/login', $data);
   }
 
   function dashboard() {
@@ -29,6 +29,6 @@ class Account extends CI_Controller {
 
   function logout() {
     $this->session->sess_destroy();
-    redirect('account/login');
+    redirect('login');
   }
 }
