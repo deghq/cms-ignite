@@ -12,7 +12,14 @@ class Posts extends CI_Controller {
 
   function show($id) {
     $data['post'] = $this->post_model->read($id);
+    $data['comments'] = $this->post_model->find_comments($id);
     $this->layout->view('posts/show', $data);
+  }
+
+  function comment($post_id) {
+    $comment = comment_form($post_id, $this->session->userdata('user_id'));
+    $this->post_model->save_comment($comment);
+    // redirect('posts/show/' . $post_id);
   }
 
   function add() {

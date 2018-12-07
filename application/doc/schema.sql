@@ -20,3 +20,11 @@ create table posts(
   title varchar(255),
   content mediumtext
 );
+
+create table post_comments(
+  id integer not null primary key auto_increment,
+  post_id integer,
+  user_id integer,
+  comments mediumtext
+);
+alter table post_comments add date datetime;
