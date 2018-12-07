@@ -12,6 +12,10 @@ class User_model extends CI_Model {
     return $this->db->get_where('users', array('id' => $id))->row();
   }
 
+  function read_by_username_and_password($username, $password) {
+    return $this->db->get_where('users', array('username' => $username, 'password' => $password))->row();
+  }
+
   function save($user) {
     $this->db->insert('users', $user);
   }

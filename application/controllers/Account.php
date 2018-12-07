@@ -20,6 +20,11 @@ class Account extends CI_Controller {
     $this->load->view($this->layout->get_theme() . '/account/login', $data);
   }
 
+  function dashboard() {
+    $data = array();
+    $this->layout->view('account/dashboard', $data);
+  }
+
   function logout() {
     $this->session->sess_destroy();
     redirect('account/login');
