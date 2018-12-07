@@ -6,6 +6,7 @@ class Account extends CI_Controller {
   }
 
   function login() {
+    redirect_if($this->session->userdata('user_id'), 'dashboard');
     $data['message'] = '';
     if ($this->input->post()) {
       list($username, $password) = login_form();
@@ -21,6 +22,7 @@ class Account extends CI_Controller {
   }
 
   function dashboard() {
+    redirect_if(!$this->session->userdata('user_id'), 'login');
     $data = array();
     $this->layout->view('account/dashboard', $data);
   }
