@@ -7,6 +7,10 @@ class Post_model extends CI_Model {
   function find_all() {
     return $this->db->get('posts')->result();
   }
+
+  function find_comments($id) {
+    return $this->db->get_where('post_comments', array('post_id' => $id))->result();
+  }
   
   function read($id) {
     return $this->db->get_where('posts', array('id' => $id))->row();
@@ -14,6 +18,11 @@ class Post_model extends CI_Model {
 
   function save($post) {
     $this->db->insert('posts', $post);
+  }
+
+  function save_comment($comment) {
+    $this->db->set('date', 'now()', false);
+    $this->db->insert('post_comments', $comment);
   }
 
   function update($post, $id) {
