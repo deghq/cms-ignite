@@ -33,3 +33,4 @@ create table links(
   id integer not null primary key auto_increment,
   name varchar(255)
 );
+alter table links add page_id integer;

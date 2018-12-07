@@ -12,4 +12,10 @@ class Home extends CI_Controller {
     $data['links'] = $this->link_model->find_all();
     $this->layout->view('home', $data);
   }
+
+  function page($id) {
+    $data['links'] = $this->link_model->find_all();
+    $data['page'] = $this->page_model->read($id);
+    $this->layout->view('page', $data);
+  }
 }

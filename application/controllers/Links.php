@@ -4,6 +4,7 @@ class Links extends CI_Controller {
     parent::__construct();
     redirect_if(!$this->session->userdata('user_id'), 'login');
     $this->load->model('link_model');
+    $this->load->model('page_model');
   }
 
   function index() {
@@ -32,6 +33,7 @@ class Links extends CI_Controller {
       redirect('links');
     }
     $data['link'] = $this->link_model->read($id);
+    $data['pages'] = $this->page_model->find_all_for_dropdown();
     $this->layout->view('links/edit', $data);
   }
 
